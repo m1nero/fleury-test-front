@@ -1,0 +1,54 @@
+<section class="listItens">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-md-2">
+        <h2> Relatorios</h2>
+      </div>
+
+    </div>
+    <div class="row">
+      <div class="col-12 col-md-6">
+        <div *ngIf="change" role="alert">
+          <div>
+            {{eMessage}}
+          </div>
+          <button class="btn btn-info-color" (click)="dispensar()">Limpar Alerta</button>
+        </div>
+        <button class="btn btn-primary" (click)="recarregaTabela()">Recarregar tabela </button>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-12">
+        <table border="1">
+          <thead>
+          <tr>
+            <th>Nome_Unidade</th>
+            <th>Cod_Unidade</th>
+            <th>Numero_Ficha</th>
+            <th>Data_Ficha</th>
+            <th>Nome_Completo</th>
+            <th>Dt_Nasc</th>
+            <th>Numero_Item</th>
+            <th>Numero_SubItem</th>
+            <th>Exame</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let item of items">
+            <td>{{ item.UNID_NO_UNIDADE }}</td>
+            <td>{{ item.ID_UNID_CD_UNIDADE_FICHA }}</td>
+            <td>{{ item.ID_FICH_NR_FICHA }}</td>
+            <td>{{ item.FICH_DH_ABERTURA }}</td>
+            <td>{{ item.PEFI_NO_NOME }} {{ item.PEFI_NO_SOBRENOME }}</td>
+            <td>{{ item.PEFI_DH_NASCIMENTO }}</td>
+            <td>{{ item.ID_ITEM_NR_ITEM }}</td>
+            <td>{{ item.ID_ITEM_NR_SUBITEM }}</td>
+            <td>{{ item.PROD_SL_EXAME }}</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>

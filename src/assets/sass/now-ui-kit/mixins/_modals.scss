@@ -1,0 +1,13 @@
+@mixin modal-colors($bg-color, $color) {
+    .modal-content{
+        background-color: $bg-color;
+        color: $color;
+        //color: gray;
+    }
+
+    .modal-header .close{
+        color: $color;
+    }
+
+
+}
